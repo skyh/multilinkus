@@ -1,0 +1,29 @@
+{
+	"name": "multilinkus",
+	"version": "0.1.0",
+
+	"main": "src/lib",
+	
+	"description": "Chrome extension for multiple links selection.",
+	"private": true,
+	
+
+	"devDependencies": {
+		"browserify": "9.x",
+		
+		"gulp": "3.x",
+		"gulp-util": "3.x",
+		"gulp-uglify": "1.x",
+		"gulp-if": "1.x",
+		"gulp-zip": "2.x",
+		"run-sequence": "1.x",
+		"requireindex": "1.x",
+		"vinyl-source-stream": "1.x",
+		"vinyl-buffer": "1.x",
+		"del": "1.x"
+	},
+
+	"dependencies": {
+		"uniq": "1.x"
+	}
+}

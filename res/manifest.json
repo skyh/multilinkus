@@ -1,0 +1,33 @@
+{
+	"manifest_version": 2,
+	"name": "__MSG_manifest_name__",
+	"short_name": "__MSG_manifest_short_name__",
+
+	"version": "0.2.0",
+
+	"default_locale": "ru",
+	"description": "__MSG_manifest_description__",
+	
+	"icons": {
+		"48": "icons/multilinkus_48.png"
+	},
+
+	"permissions": [
+		"tabs"
+	],
+
+	"content_scripts": [
+		{
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			],
+			"js": ["ui.js"]
+		}
+	],
+
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"manifest_name": {
+		"message": "Мультилинкус"
+	},
+
+	"manifest_short_name": {
+		"message": "Мультилинкус"
+	},
+	
+	"manifest_description": {
+		"message": "Расширения для открытия всех ссылок из выделенной области"
+	}
+}
