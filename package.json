@@ -10,20 +10,18 @@
 
 	"devDependencies": {
 		"browserify": "9.x",
-		
 		"gulp": "3.x",
 		"gulp-util": "3.x",
 		"gulp-uglify": "1.x",
 		"gulp-if": "1.x",
 		"gulp-zip": "2.x",
+		"gulp-replace-task": "0.1.x",
 		"run-sequence": "1.x",
 		"requireindex": "1.x",
+		"lodash": "3.x",
 		"vinyl-source-stream": "1.x",
 		"vinyl-buffer": "1.x",
-		"del": "1.x"
-	},
-
-	"dependencies": {
+		"del": "1.x",
 		"uniq": "1.x"
 	}
 }

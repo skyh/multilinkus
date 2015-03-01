@@ -1,30 +1,30 @@
 {
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"gulp",
+				"build"
+			],
+			"name": "Multilinkus - Build all",
+			"working_dir": "${project_path}"
+		}
+	],
 	"folders":
 	[
 		{
-			"path": ".",
-			
-			"file_exclude_patterns": [
+			"file_exclude_patterns":
+			[
 				"*.sublime-workspace"
 			],
-			
-			"folder_exclude_patterns": [
-				"out"
-			]
+			"path": "/Users/skyh/projects/multilinkus"
 		}
 	],
-
-	"settings": {
+	"settings":
+	{
 		"ensure_newline_at_eof_on_save": true,
-		"translate_tabs_to_spaces": false,
-		"tab_size": 4
-	},
-	
-	"build_systems": [
-		{
-			"name": "Multilinkus - Build all",
-			"cmd": ["gulp"],
-			"working_dir": "${project_path}"
-		}
-	]
+		"tab_size": 4,
+		"translate_tabs_to_spaces": false
+	}
 }

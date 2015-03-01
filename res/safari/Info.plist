@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Andrey Ivlev</string>
+	<key>CFBundleDisplayName</key>
+	<string>Multilinkus</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.multilinkus</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>@@version</string>
+	<key>CFBundleVersion</key>
+	<string>@@version</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>background.html</string>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>content.end.js</string>
+			</array>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Allows to open links in selected area. To activate - hold option key and select page area.</string>
+	<key>DeveloperIdentifier</key>
+	<string>F2J98NM69V</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

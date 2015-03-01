@@ -3,7 +3,7 @@
 	"name": "__MSG_manifest_name__",
 	"short_name": "__MSG_manifest_short_name__",
 
-	"version": "0.2.0",
+	"version": "@@version",
 
 	"default_locale": "ru",
 	"description": "__MSG_manifest_description__",
