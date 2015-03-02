@@ -22,6 +22,7 @@
 		"vinyl-source-stream": "1.x",
 		"vinyl-buffer": "1.x",
 		"del": "1.x",
-		"uniq": "1.x"
+		"uniq": "1.x",
+		"Q": "1.x"
 	}
 }

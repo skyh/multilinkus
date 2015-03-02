@@ -8,6 +8,8 @@ var path = require('path');
 var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
 var tokenize = require('./tokenize');
+var del = require('del');
+var Promise = require('Q').Promise;
 
 
 var chromeOut = function (config) {
@@ -50,4 +52,17 @@ exports.res = function (config) {
 	return gulp.src(resources)
 		.pipe(tokenize(config))
 		.pipe(gulp.dest(out));
+};
+
+
+exports.clean = function (config) {
+	return new Promise(function (resolve, reject) {
+		del(chromeOut(config), function (err, files) {
+			if (err) {
+				reject(err);
+			} else {
+				resolve(files);
+			}
+		});
+	});
 };
