@@ -5,7 +5,7 @@
 			"cmd":
 			[
 				"gulp",
-				"build"
+				"build-firefox"
 			],
 			"name": "Multilinkus - Build all",
 			"working_dir": "${project_path}"

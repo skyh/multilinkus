@@ -1,0 +1,11 @@
+{
+	"name": "multilinkus",
+	"title": "Multilinkus",
+	"id": "jid1-fYUKUPZ9j9c4sA",
+	"description": "Addon for multiple links selection.",
+	"author": "Andrey Ivlev",
+	"license": "MPL 2.0",
+	"version": "@@version",
+	"icon": "icons/icon_48.png",
+	"icon64": "icons/icon_64.png"
+}

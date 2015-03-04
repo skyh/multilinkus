@@ -12,19 +12,19 @@ var del = require('del');
 var Promise = require('q').Promise;
 
 
-var chromeOut = function (config) {
-	return path.join(config.out, config.name + '.chrome-extension');
+var firefoxOut = function (config) {
+	return path.join(config.out, config.name + '.firefox-extension');
 };
 
 
 exports.js = function (config) {
-	var src = path.join(config.src, 'platform', 'chrome');
-	var out = chromeOut(config);
+	var src = path.join(config.src, 'platform', 'firefox');
+	var out = firefoxOut(config);
 	var needUglify = !config.debug;
 
 	var jsFiles = [
-		'background.js',
-		'ui.js'
+		'lib/main.js',
+		'data/ui.js'
 	];
 
 	return Promise.all(jsFiles.map(function (file) {
@@ -33,7 +33,8 @@ exports.js = function (config) {
 		return new Promise(function (resolve) {
 			browserify(module, {
 				baseDir: src,
-				debug: config.debug
+				debug: config.debug,
+				ignoreMissing: true
 			}).bundle().on('error', function (error) {
 				console.error(error.message);
 			})
@@ -53,8 +54,8 @@ exports.js = function (config) {
 
 
 exports.res = function (config) {
-	var resources = path.join(config.res, 'chrome', '**');
-	var out = chromeOut(config);
+	var resources = path.join(config.res, 'firefox', '**');
+	var out = firefoxOut(config);
 	
 	return gulp.src(resources)
 		.pipe(tokenize(config))
@@ -64,7 +65,7 @@ exports.res = function (config) {
 
 exports.clean = function (config) {
 	return new Promise(function (resolve, reject) {
-		del(chromeOut(config), function (err, files) {
+		del(firefoxOut(config), function (err, files) {
 			if (err) {
 				reject(err);
 			} else {
@@ -76,36 +77,5 @@ exports.clean = function (config) {
 
 
 exports.pack = function (config) {
-	return new Promise(function (resolve) {
-		var fs = require('fs');
-		var archiver = require('archiver');
-
-		var srcDirectory = chromeOut(config);
-		var outputPath = path.join(
-			path.dirname(srcDirectory),
-			path.basename(srcDirectory) + '.zip'
-		);
-
-		var output = fs.createWriteStream(outputPath);
-		var zipArchive = archiver('zip');
-
-		output.on('close', function() {
-			console.log('done with the zip', outputPath);
-		});
-
-		zipArchive.pipe(output);
-
-		zipArchive.bulk([
-			{ src: [ '**/*' ], cwd: srcDirectory, expand: true }
-		]);
-
-		zipArchive.finalize(function(err, bytes) {
-
-			if (err) {
-				throw err;
-			}
-
-			console.log('done:', base, bytes);
-		});
-	});
+	return new Promise.reject(new Error('Not implemented.'));
 };

@@ -1,55 +1,68 @@
 var gulp = require('gulp');
-var config = require('./config');
+var debug = require('./config').debug;
+var release = require('./config').release;
+
 var make_chrome = require('./make_chrome');
 var make_safari = require('./make_safari');
+var make_firefox = require('./make_firefox');
 
 
 gulp.task('default', ['release']);
-gulp.task('build', ['build-chrome', 'build-safari']);
+gulp.task('build', ['build-chrome', 'build-safari', 'build-firefox']);
 gulp.task('release', ['release-chrome', 'release-safari']);
 gulp.task('clean', ['clean-chrome', 'clean-safari']);
 
+gulp.task('watch', ['build'], function () {
+	gulp.watch([
+		debug.src + '/**',
+		debug.res + '/**'		
+	], ['build']);
+});
+
 
 gulp.task('build-chrome', function () {
-	var cfg = config.debug;
-
 	return [
-		make_chrome.js(cfg),
-		make_chrome.res(cfg)
+		make_chrome.js(debug),
+		make_chrome.res(debug)
 	];
 });
 
 gulp.task('build-safari', function () {
-	var cfg = config.debug;
-
 	return [
-		make_safari.js(cfg),
-		make_safari.res(cfg)
+		make_safari.js(debug),
+		make_safari.res(debug)
+	];
+});
+
+gulp.task('build-firefox', function () {
+	return [
+		make_firefox.js(debug),
+		make_firefox.res(debug)
 	];
 });
 
 gulp.task('release-chrome', ['clean-chrome'], function () {
-	var cfg = config.release;
-
-	return [
-		make_chrome.js(cfg),
-		make_chrome.res(cfg)
-	];
+	return Promise.all([
+		make_chrome.js(release),
+		make_chrome.res(release)
+	]);
 });
 
 gulp.task('release-safari', ['clean-safari'], function () {
-	var cfg = config.release;
-
 	return [
-		make_safari.js(cfg),
-		make_safari.res(cfg)
+		make_safari.js(release),
+		make_safari.res(release)
 	];
 });
 
 gulp.task('clean-chrome', function () {
-	return make_chrome.clean(config.release);
+	return make_chrome.clean(release);
 });
 
 gulp.task('clean-safari', function () {
-	return make_safari.clean(config.release);
+	return make_safari.clean(release);
+});
+
+gulp.task('pack-chrome', ['release-chrome'], function () {
+	return make_chrome.pack(release);
 });
