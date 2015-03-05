@@ -5,14 +5,17 @@
 3. <i>(Optional)</i> Install Gulp as console tool. Gulp is a building system for Node.js. Run `npm install -g gulp`.
 4. If you omit #3, replace any future `gulp` command with `./node_modules/bin/gulp`.
 
-For building Multilinkus
+# Building
 Run `gulp build` for debug version and `gulp release` for release. Output folder is `out`.
 
+# Packaging
+Differs for different browsers.
+
 ## Chrome, Opera, Yandex.Browser, etc.
-Use `gulp release` and Load extension from Developer mode in extensions settings.
+Load `out/multilinkus.chrome-extension` folder in Developer mode.
 
 ## Safari
-Use `gulp release` and Safari Extensions Builder to load, install or pack.
+Open Safari Extensions Builder, choose "Add extension", select `out/multilinkus.safariextension` folder.
 
 ## Firefox
-Multilinkus for Firefox required Mozilla Addons SDK. Mac users can install SDK via Homebrew `brew install mozilla-addon-sdk`. Use `cfx run` or `cfx xpi` in `out/multilinkus.firefox-extension` forlder.
+Multilinkus for Firefox required Mozilla Addons SDK. Mac users can install SDK via Homebrew `brew install mozilla-addon-sdk`. Use `cfx run` or `cfx xpi` in `out/multilinkus.firefox-extension` folder.
