@@ -1,5 +1,5 @@
 # Building
-Run `gulp build` for debug version and `gulp release` for release.
+Run `gulp build` for debug version and `gulp release` for release. Output folder is `out`.
 
 ## Chrome, Opera, Yandex.Browser, etc.
 Use `gulp release` and Load extension from Developer mode in extensions settings.
