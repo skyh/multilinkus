@@ -9,7 +9,7 @@ var make_firefox = require('./make_firefox');
 
 gulp.task('default', ['release']);
 gulp.task('build', ['build-chrome', 'build-safari', 'build-firefox']);
-gulp.task('release', ['release-chrome', 'release-safari']);
+gulp.task('release', ['release-chrome', 'release-safari', 'release-firefox']);
 gulp.task('clean', ['clean-chrome', 'clean-safari']);
 
 gulp.task('watch', ['build'], function () {
@@ -55,12 +55,23 @@ gulp.task('release-safari', ['clean-safari'], function () {
 	];
 });
 
+gulp.task('release-firefox', ['clean-firefox'], function () {
+	return [
+		make_firefox.js(release),
+		make_firefox.res(release)
+	];
+});
+
 gulp.task('clean-chrome', function () {
 	return make_chrome.clean(release);
 });
 
 gulp.task('clean-safari', function () {
 	return make_safari.clean(release);
+});
+
+gulp.task('clean-firefox', function () {
+	return make_firefox.clean(release);
 });
 
 gulp.task('pack-chrome', ['release-chrome'], function () {
