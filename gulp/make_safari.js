@@ -28,7 +28,7 @@ exports.js = function (config) {
 	];
 
 	return jsFiles.map(function (file) {
-		var module = ['.', src, file].join(path.sep);
+		var module = ['.', src, file].join(path.posix.sep);
 
 		return browserify(module, {
 				baseDir: src,
@@ -48,7 +48,7 @@ exports.js = function (config) {
 exports.res = function (config) {
 	var resources = path.join(config.res, 'safari', '**');
 	var out = safariOut(config);
-	
+
 	return gulp.src(resources)
 		.pipe(tokenize(config))
 		.pipe(gulp.dest(out));

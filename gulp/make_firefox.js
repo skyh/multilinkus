@@ -28,7 +28,7 @@ exports.js = function (config) {
 	];
 
 	return Promise.all(jsFiles.map(function (file) {
-		var module = ['.', src, file].join(path.sep);
+		var module = ['.', src, file].join(path.posix.sep);
 
 		return new Promise(function (resolve) {
 			browserify(module, {
@@ -56,7 +56,7 @@ exports.js = function (config) {
 exports.res = function (config) {
 	var resources = path.join(config.res, 'firefox', '**');
 	var out = firefoxOut(config);
-	
+
 	return gulp.src(resources)
 		.pipe(tokenize(config))
 		.pipe(gulp.dest(out));
