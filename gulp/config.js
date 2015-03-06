@@ -2,7 +2,7 @@ var _ = require('lodash');
 
 
 exports.release = {
-	version: '1.0',
+	version: '1.0.1',
 	src: 'src',
 	res: 'res',
 	out: 'out',
