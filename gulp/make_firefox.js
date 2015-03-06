@@ -20,7 +20,7 @@ var firefoxOut = function (config) {
 exports.js = function (config) {
 	var src = path.join(config.src, 'platform', 'firefox');
 	var out = firefoxOut(config);
-	var needUglify = !config.debug;
+	var needUglify = false; // FF does not works with uglify
 
 	var jsFiles = [
 		'lib/main.js',
