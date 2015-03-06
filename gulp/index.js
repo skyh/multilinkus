@@ -10,12 +10,12 @@ var make_firefox = require('./make_firefox');
 gulp.task('default', ['release']);
 gulp.task('build', ['build-chrome', 'build-safari', 'build-firefox']);
 gulp.task('release', ['release-chrome', 'release-safari', 'release-firefox']);
-gulp.task('clean', ['clean-chrome', 'clean-safari']);
+gulp.task('clean', ['clean-chrome', 'clean-safari', 'clean-firefox']);
 
 gulp.task('watch', ['build'], function () {
 	gulp.watch([
 		debug.src + '/**',
-		debug.res + '/**'		
+		debug.res + '/**'
 	], ['build']);
 });
 
