@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Author</key>
-	<string>Andrey Ivlev</string>
+	<string>@@author.name</string>
 	<key>CFBundleDisplayName</key>
-	<string>Multilinkus</string>
+	<string>@@safari.CFBundleDisplayName</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.multilinkus</string>
+	<string>@@safari.CFBundleIdentifier</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -30,9 +30,9 @@
 		</dict>
 	</dict>
 	<key>Description</key>
-	<string>Allows to open links in selected area. To activate - hold option key and select page area.</string>
+	<string>@@safari.Description</string>
 	<key>DeveloperIdentifier</key>
-	<string>F2J98NM69V</string>
+	<string>@@safari.DeveloperIdentifier</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
@@ -45,5 +45,9 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>@@safari.DownloadUrlPrefix/@@safari.UpdateManifest</string>
+	<key>Website</key>
+	<string>@@safari.Website</string>
 </dict>
 </plist>

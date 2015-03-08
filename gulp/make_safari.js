@@ -16,6 +16,10 @@ var safariOut = function (config) {
 	return path.join(config.out, 'multilinkus.safariextension');
 };
 
+var plistOut = function (config) {
+	return path.join(config.out, 'multilinkus.safariextension.update');
+};
+
 
 exports.js = function (config) {
 	var src = path.join(config.src, 'platform', 'safari');
@@ -64,4 +68,13 @@ exports.clean = function (config) {
 			}
 		});
 	});
+};
+
+exports.update = function (config) {
+	var resources = path.join(config.res, 'safari-update', '**');
+	var out = plistOut(config);
+
+	return gulp.src(resources)
+		.pipe(tokenize(config))
+		.pipe(gulp.dest(out));
 };

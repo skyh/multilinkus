@@ -51,7 +51,8 @@ gulp.task('release-chrome', ['clean-chrome'], function () {
 gulp.task('release-safari', ['clean-safari'], function () {
 	return [
 		make_safari.js(release),
-		make_safari.res(release)
+		make_safari.res(release),
+		make_safari.update(release)
 	];
 });
 
