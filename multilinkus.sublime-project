@@ -5,6 +5,9 @@
 				"*.sublime-workspace"
 			],
 			"path": "."
+		},
+		{
+			"path": "../multilinkus-gh-pages"
 		}
 	],
 
@@ -12,9 +15,10 @@
 		"trim_trailing_white_space_on_save": true,
 		"ensure_newline_at_eof_on_save": true,
 		"tab_size": 4,
-		"translate_tabs_to_spaces": false
+		"translate_tabs_to_spaces": false,
+		"scroll_past_end": true
 	},
-	
+
 	"build_systems": [
 		{
 			"name": "Multilinkus - Build all",
