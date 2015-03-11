@@ -7,7 +7,7 @@
 
 	"default_locale": "ru",
 	"description": "__MSG_manifest_description__",
-	
+
 	"icons": {
 		"32": "icons/icon_32.png",
 		"48": "icons/icon_48.png",
