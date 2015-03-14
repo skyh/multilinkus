@@ -12,6 +12,10 @@ var actions = {
 				openerTabId: sender.tab.id
 			});
 		});
+	},
+
+	ping: function (sender) {
+		//
 	}
 };
 
